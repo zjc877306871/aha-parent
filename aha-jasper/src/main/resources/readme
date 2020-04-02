@@ -1,0 +1,13 @@
+1.解决中文不显示的方法：
+    1.1项目中引入jrxml文件而不是jasper文件，然后在jrxml文件中添加
+    <style name="myStyle" isDefault="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+    代码中要添加编译的步骤，代码为
+    URL url = this.getClass().getClassLoader().getResource("jasper/" + reportName + ".jrxml");
+            JasperCompileManager.compileReportToFile(url.getPath());
+    1.2.将1.1的配置直接写入jrxml。然后编译导出。
+    1.2.或者是通过软件操作，在style-->新建style,双击新建的style-->style下的default style-->
+    advanced下的 pdf里面的三个属性。
+
+    1.3
+2.解决数据展示问题
+    如果是多条数据数据展示，数据放在detail段，那么最好将detail端的高度和变量字段域的高度设置一至，且不能放置其他信息，只能放置变量字段。
