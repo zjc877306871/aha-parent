@@ -1,5 +1,7 @@
 package com.aha.tom.link.singleList;
 
+import java.util.LinkedList;
+
 public class LruLinkedList<T> extends SingleLinkedList<T> {
 
     int maxSize;
