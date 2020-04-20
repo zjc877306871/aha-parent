@@ -132,6 +132,8 @@ public class MyCircularDeque<T> {
     }
 
 
+
+
     public static void main(String[] args) {
         MyCircularDeque<Integer> deque = new MyCircularDeque(6);
         deque.insertFront(4);
@@ -139,6 +141,9 @@ public class MyCircularDeque<T> {
         boolean empty = deque.isEmpty();
         int front = deque.getFront();
         System.out.println("front is " + front + "isEmpty " + empty);
+        ThreadLocal local = new ThreadLocal();
+        local.set("22");
+
     }
 
 }
